@@ -28,7 +28,7 @@ function google_fonts() {
 	);
 	wp_enqueue_style( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
             }
-            
+
 add_action('wp_enqueue_scripts', 'google_fonts');
 
 
@@ -93,7 +93,7 @@ return $content;
 
 function exclude_category( $query ) {
     if ( ($query->is_home() || $query->is_archive()) && $query->is_main_query() ) {
-        $query->set( 'cat', '-1,-14' );
+        $query->set( 'cat', '-1,-51' );
     }
 }
 add_action( 'pre_get_posts', 'exclude_category' );
@@ -159,8 +159,8 @@ function socialtext_color_options_sections( $wp_customize ) {
       'title'       => __( 'SocialText Colors Panel', 'twentysixteen-child' ),
       'description' => __( 'Color options for Social Text theme', 'twentysixteen-child' ),
      ) );
-     
-	 
+
+
 	 /**
      * Add a Section for Colors
      */
@@ -170,8 +170,8 @@ function socialtext_color_options_sections( $wp_customize ) {
       'panel'       => 'stx_colors_panel',
       'description' => __( 'Header background and logo colors', 'twentysixteen-child' ),
      ) );
-	 
-	 
+
+
      //More code to come
     }
     add_action( 'customize_register', 'socialtext_color_options_sections' );
@@ -188,7 +188,7 @@ function socialtext_color_fields( $fields ) {
       'description' => __( 'Background color for the site header', 'twentysixteen-child' ),
       'section'     => 'stx_colors',
       'priority'    => 10,
-      'default'     => '#c9c585',   
+      'default'     => '#c9c585',
       'output'      => array(
         array(
           'element'  => '#header-container',
@@ -206,7 +206,7 @@ function socialtext_color_fields( $fields ) {
       'description' => __( 'Color for the site logo and main menu text', 'twentysixteen-child' ),
       'section'     => 'stx_colors',
       'priority'    => 10,
-      'default'     => '#00404f',   
+      'default'     => '#00404f',
       'output'      => array(
         array(
           'element'  => '.logosvg',
@@ -232,7 +232,7 @@ function socialtext_color_fields( $fields ) {
       'description' => __( 'Color for main menu text on hover', 'twentysixteen-child' ),
       'section'     => 'stx_colors',
       'priority'    => 10,
-      'default'     => '#686868',   
+      'default'     => '#686868',
       'output'      => array(
         array(
           'element'  => '.main-navigation li:hover > a',
@@ -244,7 +244,7 @@ function socialtext_color_fields( $fields ) {
 		  ),
         ),
     );
-      
+
       return $fields;
     }
     add_filter( 'kirki/fields', 'socialtext_color_fields' );
@@ -297,7 +297,7 @@ function custom_editorsblog() {
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => true,		
+		'has_archive'           => true,
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'post',

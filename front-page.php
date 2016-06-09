@@ -21,41 +21,41 @@ get_header(); ?>
 		array(
 			'post_type'		=> 'post',
 			'posts_per_page' 	=> '9',
-			'cat'		=> '-14,'
+			'cat'		=> '-51,'
 /*			'cat'		=> '-14,' */
 			)
 		);
-						
+
 		if( $st_homeposts_query->posts ) { ?>
-		
-                        
+
+
 			<?php
 				$homefirstpost = '';
 				$homepostblock = '';
 				$st_count=0; ?>
 			<?php foreach( $st_homeposts_query->posts as $post ) : setup_postdata( $post ); ?>
-			<?php $st_count++; 
-			
+			<?php $st_count++;
+
 				if ( in_category( 'reviews' )) {
 				$catname = 'Features: Reviews';
-				$catlink = get_category_link( '12' );
+				$catlink = get_category_link( '31' );
 				} elseif ( in_category( 'events' )) {
 				$catname = 'Features: Events';
-				$catlink = get_category_link( '3' );
+				$catlink = get_category_link( '22' );
 				} elseif ( in_category( 'poetry' )) {
 				$catname = 'Features: Poetry';
-				$catlink = get_category_link( '2569' );
+				$catlink = get_category_link( '2604' );
 				} elseif ( in_category( 'interviews' )) {
 				$catname = 'Features: Interviews';
-				$catlink = get_category_link( '30' );
+				$catlink = get_category_link( '46' );
 				} else {
 				$catname = 'Features';
 				$catlink = get_permalink( get_option('page_for_posts' ) );
 				}
-			
+
 				if ($st_count == 1) {
 				$homefirstpost .= '<div class="feed_item"><div class="feed_item_inner">';
-				if( has_post_thumbnail() ) { 
+				if( has_post_thumbnail() ) {
 				$homefirstpost .= '<a href="' . get_the_permalink() . '" class="feed_item_image">' . get_the_post_thumbnail( $post,'feed-image' ) . '</a>';
 				}
 
@@ -74,15 +74,15 @@ get_header(); ?>
 				$homefirstpost .= '</span></div></div>';
 
 				} else {
-				
+
 				if ($st_count % 2 == 0) {
 					$st_col = 'left';
 				} else {
 					$st_col = 'right';
 				}
-				
+
 				$homepostblock .= '<div class="feed_item feed_col_' . $st_col . '"><div class="feed_item_inner">';
-				if( has_post_thumbnail() ) { 
+				if( has_post_thumbnail() ) {
 				$homepostblock .= '<a href="' . get_the_permalink() . '" class="feed_item_image">' . get_the_post_thumbnail( $post,'feed-image' ) . '</a>';
 				}
 
@@ -99,15 +99,15 @@ get_header(); ?>
 				$homepostblock .= '<span class="feed_item_details">';
 				$homepostblock .= '<span class="feed_item_author"><time class="feed_item_date" datetime="">' . get_the_date('F j, Y') . '</time> | <a href="' . esc_url( $catlink ) . '">' . $catname . '</a>';
 				$homepostblock .= '</span></div></div>';
-				
+
 				}
 			 endforeach; ?>
- 	
+
 
     <?php } ?>
-                        
+
     <?php wp_reset_postdata();
-	
+
 		$topics = get_terms('periscope_topic', 'number=1&hide_empty');
 	foreach ($topics as $topic) {
 
@@ -121,11 +121,11 @@ get_header(); ?>
 	}
 
 	?>
-	
+
 
 	<div class="site-inner">
 		<div class="home-section-one site-content clear">
-		
+
 		<div class="home-first-post">
 			<?php echo $homefirstpost; ?>
 		</div>
@@ -141,10 +141,10 @@ get_header(); ?>
 			</div>
 			</div>
 		</div>
-		
+
 		</div>
 	</div><!-- .site-inner HOME SECTION ONE -->
-	
+
 	<?php $st_homejournal_query = new WP_Query(
 		array(
 			'post_type'		=> 'journal',
@@ -154,7 +154,7 @@ get_header(); ?>
 			'order'		=> 'DESC'
 			)
 		);
-						
+
 if ( $st_homejournal_query->have_posts() ) {
 
 	while ( $st_homejournal_query->have_posts() ) {
@@ -167,37 +167,37 @@ if ( $st_homejournal_query->have_posts() ) {
 			$j_title = get_field('journal_title');
 			}
 ?>
-	
+
 	<div id="journal-container">
 	<div class="site-inner">
 		<div class="site-content">
-	
+
 		<div class="home-journal-cover">
 		<?php if ( has_post_thumbnail() ) { ?>
 			<a href="<?php the_field('journal_url'); ?>"><?php the_post_thumbnail('journal-feat'); ?></a>
-		<?php } ?>	
+		<?php } ?>
 			<a href="http://www.dukeupress.edu/socialtext" class="journal-subscribe-button">Subscribe</a>
 		</div>
-		
+
 		<div class="home-journal-contents">
 			<span class="feed_item_cat">Current Journal Issue</span>
 			<span class="feed_item_title">Issue <?php the_field('journal_issue_number'); ?> | <?php echo $j_title; ?></span>
 			<div class="feed_item_excerpt"><?php the_content(); ?></div>
 			<span class="feed_item_details journal_links"><a href="<?php the_field('journal_url'); ?>"><?php the_field('journal_link_text'); ?></a></span>
 		</div>
-		
+
 		<div class="home-journal-article">
 			<span class="feed_item_cat">Featured Journal Article</span>
 			<span class="feed_item_title"><?php the_field('featured_article_title'); ?><span class="feed_item_subtitle">
 		<?php if ( the_field('featured_article_subtitle') != "" ) { ?>
 			<?php the_field('featured_article_subtitle'); ?>
-		<?php } ?>	
+		<?php } ?>
 			</span></span>
 			<div class="feed_item_excerpt"><?php the_field('featured_article_abstract'); ?></div>
 			<span class="feed_item_details"><span class="feed_item_author"><em>By</em>&nbsp; <?php the_field('featured_article_author'); ?></span></span>
 			<span class="feed_item_details journal_links"><a href="<?php the_field('featured_article_url'); ?>">Available for free download via Duke University Press</a></span>
 		</div>
-		
+
 		</div>
 	</div><!-- .site-inner JOURNAL -->
 	</div><!-- #journal-container -->
@@ -216,7 +216,7 @@ if ( $st_homejournal_query->have_posts() ) {
 		<main id="main" class="site-main" role="main">
 
 			<?php echo $homepostblock; ?>
-		
+
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
