@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+	if ($(window).width() > 910){
 	function updateColumnHeights() {
 		var height = Math.max($('.home-first-post').height(),
 							$('.home-periscope').height());
@@ -7,4 +8,5 @@ jQuery(document).ready(function($) {
 	}
 	$(window).on('resize', function(){  updateColumnHeights(); });
 	$(document).ready(function(){ updateColumnHeights(); });
+	}
 })

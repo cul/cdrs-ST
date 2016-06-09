@@ -7,7 +7,7 @@
  Template:       twentysixteen
  Version:        1.0.0
 */
- 
+
 /* Add Custom CSS after this line */
 
 
@@ -38,7 +38,7 @@ pre {
 /**
  * 4.0 - Elements
  */
- 
+
 
 body {
 	background: #fff;
@@ -53,12 +53,12 @@ a {
 /**
  * 6.0 - Navigation
  */
- 
- 
+
+
 /**
  * 6.1 - Links
- */ 
- 
+ */
+
 a:hover,
 a:focus,
 a:active {
@@ -115,7 +115,7 @@ a:active {
 .site-footer .site-info a:focus {
 	color: #fff;
 }
- 
+
 
 /**
  * 6.2 - Menus
@@ -158,7 +158,7 @@ a:active {
 .widget .widget-title {
     font-family: "Archivo Narrow", Montserrat, "Helvetica Neue", sans-serif;
 /*    letter-spacing: 0.046875em; */
-    letter-spacing: 0.1em;	
+    letter-spacing: 0.1em;
 }
 
 .widget ul {
@@ -216,10 +216,10 @@ a:active {
 /**
  * 11.0 - Content
  */
- 
- 
- 
- 
+
+
+
+
 /**
  * 11.1 - Header
  */
@@ -451,12 +451,12 @@ a.feed_item_title:hover {
 /**
  * 11.2 - Posts and pages
  */
- 
- 
+
+
 .entry-footer {
 	display: none;
 }
- 
+
 .entry-title {
 	font-family: "Archivo Narrow", "Helvetica Neue", sans-serif;
 	font-size: 48px;
@@ -474,11 +474,11 @@ a.feed_item_title:hover {
 	margin-bottom: 0.6em;
 }
 
- 
+
 .article-info-box {
 	background-color: #f2f2f2;
 	margin-bottom: 42px;
-	padding: 0 
+	padding: 0
 }
 .article-info {
 	float: none;
@@ -660,7 +660,7 @@ a.feed_item_title:hover {
 /**
  * 11.2.1 - Blog Pages
  */
- 
+
 .content-area-wide {
     float: left;
     margin-right: -100%;
@@ -752,7 +752,7 @@ a.feed_item_title:hover {
 /**
  * 11.2.4 - Periscope Homepage
  */
- 
+
 .periscope-info-box .feed_item_cat, .periscope-box .feed_item_cat, .periscope-att .feed_item_cat {
 	padding-bottom: 12px;
 	border-bottom: 1px solid #e6e6e8;
@@ -864,7 +864,7 @@ a.feed_item_title:hover {
 /**
  * 11.5 - Sidebar
  */
- 
+
 .rpwe-block h3.rpwe-title {
     font-weight: 400;
     font-size: 13px!important;
@@ -986,7 +986,7 @@ a.feed_item_title:hover {
 /**
  * 11.5.1 - Recent Posts Hardcoded Widget
  */
- 
+
 
 .recent-ul {
 	list-style: none!important;
@@ -1048,14 +1048,14 @@ a.feed_item_title:hover {
 	border-bottom: none;
 }
 
- 
- 
+
+
 
 
 /**
  * 11.6 - Footer
  */
- 
+
 #signupbox {
 	border: 1px solid #e6e6e8;
 	clear: both;
@@ -1063,7 +1063,7 @@ a.feed_item_title:hover {
 	padding: 42px;
 	margin-bottom: 60px;
 }
- 
+
 #footer-container {
 	background-color: #f2f2f2;
 }
@@ -1074,7 +1074,7 @@ a.feed_item_title:hover {
 .signup-text {
     font-family: "Archivo Narrow", Montserrat, "Helvetica Neue", sans-serif;
 /*    letter-spacing: 0.046875em; */
-    letter-spacing: 0.1em;	
+    letter-spacing: 0.1em;
     font-size: 16px;
     font-size: 1rem;
 	font-weight: 700;
@@ -1114,11 +1114,11 @@ a.feed_item_title:hover {
 /**
  * Media Queries
  */
- 
+
 /**
  * >= 710px
  */
- 
+
 @media screen and (min-width: 44.375em) {
 
 body:not(.custom-background-image):before,
@@ -1129,7 +1129,7 @@ body:not(.custom-background-image):before,
 	.site {
 		margin: 0px;
 	}
-	
+
 
 .article-info-content, .article-no-image-content, .article-info-content-no {
 	padding: 18px 23.0769% 18px 7.6923%;
@@ -1141,7 +1141,7 @@ body:not(.custom-background-image):before,
 /**
  * 11.2.4 - Periscope Homepage
  */
- 
+
 .periscope_topic_cover_img {
 	max-width: 68.5714285%;
 	height: auto;
@@ -1158,6 +1158,23 @@ body:not(.custom-background-image):before,
 
 .home-section-one, #journal-container .site-content {
 	margin-right: 23.0769%;
+}
+
+.home #primary {
+	margin-left: 7.6923%;
+	margin-right: 23.0769%;
+}
+
+.page-template-periscope .periscope-box, .page-template-periscope .periscope-info-box {
+	margin-left: 7.6923%;
+	margin-right: 23.0769%;
+}
+
+.entry-title {
+	font-size: 36px;
+	-webkit-hyphens:manual;
+	-moz-hyphens:manual;
+	hyphens:manual;
 }
 
 }
@@ -1250,7 +1267,7 @@ body:not(.custom-background-image):before,
 .home-periscope {
 	position: relative;
 	z-index: 0;
-	
+
 }
 .home-periscope img {
 
@@ -1436,7 +1453,30 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
 }
 
 
+/**
+ * <= 710px
+ */
 
+@media screen and (max-width: 44.375em) {
+
+.home #primary {
+	margin-left: 7.6923%;
+	margin-right: 7.6923%;
+}
+
+.page-template-periscope .periscope-box, .page-template-periscope .periscope-info-box {
+	margin-left: 7.6923%;
+	margin-right: 7.6923%;
+}
+
+.entry-title {
+	font-size: 30px;
+	-webkit-hyphens:manual;
+	-moz-hyphens:manual;
+	hyphens:manual;
+}
+
+}
 
 
 
