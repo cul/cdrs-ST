@@ -22,6 +22,9 @@
 				} elseif ( in_category( 'events' )) {
 				$catname = 'Features: Events';
 				$catlink = get_category_link( '22' );
+				} elseif ( in_category( 'fiction' )) {
+				$catname = 'Fiction';
+				$catlink = get_category_link( '1646' );
 				} elseif ( in_category( 'poetry' )) {
 				$catname = 'Features: Poetry';
 				$catlink = get_category_link( '2604' );
