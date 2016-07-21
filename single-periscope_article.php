@@ -145,7 +145,13 @@ $taxlink = get_term_link($taxid);
 			<a href="<?php the_permalink(); ?>">
 			<?php the_title(); ?>
 			</a>
-			<div class="per_toc_byline"><span>By</span> <?php the_author(); ?></div>
+			<div class="per_toc_byline"><span>By</span>
+				<?php if ( function_exists( 'coauthors_posts_links' ) )
+					coauthors_posts_links();
+					else
+						the_author_posts_link();
+				?>
+			</div>
 			</li>
 			<?php endwhile; ?>
 

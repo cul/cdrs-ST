@@ -20,7 +20,13 @@
 		<div class="article-info">
 			<div class="article-info-content">
 <!--				<span class="article-type">Online Feature</span>  -->
-				<span class="byline"><em>By</em> &nbsp;<?php the_author_posts_link(); ?></span>
+				<span class="byline"><em>By</em> &nbsp;
+					<?php if ( function_exists( 'coauthors_posts_links' ) )
+						coauthors_posts_links();
+						else
+							the_author_posts_link();
+					?>
+				</span>
 				<span class="posted-on"><?php the_date('F j, Y'); ?></span>
 				<?php twentysixteen_entry_taxonomies(); ?>
 			</div>
