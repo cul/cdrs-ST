@@ -36,7 +36,13 @@ $taxlink = get_term_link($taxid);
 		<div class="article-info">
 			<div class="article-info-content">
 <!--				<span class="article-type">Online Feature</span>  -->
-				<span class="byline"><em>By</em> &nbsp;<?php the_author_posts_link(); ?></span>
+				<span class="byline"><em>By</em> &nbsp;
+					<?php if ( function_exists( 'coauthors_posts_links' ) )
+            coauthors_posts_links();
+            else
+            	the_author_posts_link();
+          ?>
+				</span>
 				<span class="posted-on"><?php the_date('F j, Y'); ?></span>
 				<?php twentysixteen_entry_taxonomies(); ?>
 			</div>
@@ -94,21 +100,21 @@ $taxlink = get_term_link($taxid);
 
 
 	<aside id="secondary" class="sidebar widget-area" role="complementary">
-	
+
 		<?php dynamic_sidebar( 'periscope-contents-sidebar' ); ?>
 
 
     <?php
-	
+
 	$topic = get_term( $taxid, $periscope_topic );
-	$per_title = $topic->name;		
-	$per_link = get_term_link($topic);		
+	$per_title = $topic->name;
+	$per_link = get_term_link($topic);
 	$per_src = z_taxonomy_image_url($topic->term_id, 'single-image');
 
 
 	?>
 
-		<section id="current_per" class="widget widget_current_per">		
+		<section id="current_per" class="widget widget_current_per">
 			<h2 class="widget-title">Table of Contents</h2>
 <?php 	if (is_singular()) { ?>
 		<div class="side-periscope">
@@ -131,9 +137,9 @@ $taxlink = get_term_link($taxid);
 							),
 							),
 						);
-			
+
 			$per_query = new WP_Query( $args );
-				
+
 			while ($per_query->have_posts()) : $per_query->the_post(); ?>
 			<li>
 			<a href="<?php the_permalink(); ?>">
@@ -142,13 +148,13 @@ $taxlink = get_term_link($taxid);
 			<div class="per_toc_byline"><span>By</span> <?php the_author(); ?></div>
 			</li>
 			<?php endwhile; ?>
-			
+
 			<?php wp_reset_postdata(); ?>
 
 			</ul>
-			
+
 			<div class="per_toc_archive_link"><a href="/periscope/">Periscope Archive</a></div>
-		
+
 		</section>
 
 

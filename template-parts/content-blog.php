@@ -42,7 +42,13 @@
 	<header class="entry-header">
 		<h2 class="content-list-title entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?><?php echo $sub; ?></a></h2>
 
-			<span class="feed_item_cat"><?php the_author_posts_link(); ?></span>
+			<span class="feed_item_cat">
+				<?php if ( function_exists( 'coauthors_posts_links' ) )
+					coauthors_posts_links();
+					else
+						the_author_posts_link();
+				?>
+			</span>
 
 	</header><!-- .entry-header -->
 
