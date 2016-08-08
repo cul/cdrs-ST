@@ -72,7 +72,7 @@ get_header(); ?>
 					}
 				$homefirstpost .= '</span></a>';
 				$homefirstpost .= '<span class="feed_item_cat">';
-				$homefirstpost .= '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . get_the_author() . '</a></span>';
+				$homefirstpost .= '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . coauthors_posts_links(', ', ',and ', null, null, false) . '</a></span>';
 				$homefirstpost .= '<div class="feed_item_excerpt">';
 				$homefirstpost .= '<p>' . get_the_excerpt() . '</p></div>';
 				$homefirstpost .= '<span class="feed_item_details">';
