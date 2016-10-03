@@ -249,6 +249,10 @@ a:active {
 	display: none;
 }
 
+.site-branding svg {
+	max-width: 100%;
+}
+
 .site-strapline {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	text-transform: uppercase;
