@@ -44,9 +44,9 @@
 
 			<span class="feed_item_cat">
 				<?php if ( function_exists( 'coauthors_posts_links' ) )
-					coauthors_posts_links();
+					coauthors();
 					else
-						the_author_posts_link();
+						the_author();
 				?>
 			</span>
 

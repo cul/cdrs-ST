@@ -31,7 +31,7 @@
 			<?php if ( '' !== get_the_author_meta( 'description' ) ) {
 			the_author_meta( 'description' );
 			} ?>
-			<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+			<!-- <a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"> -->
 				<?php printf( __( 'More by %s', 'twentysixteen' ), 'this author' ); ?>
 			</a>
 		</p><!-- .author-bio -->

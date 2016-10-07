@@ -38,9 +38,9 @@ $taxlink = get_term_link($taxid);
 <!--				<span class="article-type">Online Feature</span>  -->
 				<span class="byline"><em>By</em> &nbsp;
 					<?php if ( function_exists( 'coauthors_posts_links' ) )
-            coauthors_posts_links();
+            coauthors();
             else
-            	the_author_posts_link();
+            	the_author();
           ?>
 				</span>
 				<span class="posted-on"><?php the_date('F j, Y'); ?></span>
