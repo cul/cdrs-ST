@@ -51,14 +51,7 @@ function the_category_filter($thelist,$separator=' ') {
 add_filter('the_category','the_category_filter',10,2);
 
 
-add_action( 'wp_enqueue_scripts', 'add_columns_script' );
-function add_columns_script() {
-    wp_enqueue_script(
-        'columns-script', // name your script so that you can attach other scripts and de-register, etc.
-        get_stylesheet_directory_uri() . '/js/columns.js', // this is the location of your script file
-        array('jquery') // this array lists the scripts upon which your script depends
-    );
-}
+
 
 add_action( 'wp_enqueue_scripts', 'add_toggle_script' );
 function add_toggle_script() {
