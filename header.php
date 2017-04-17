@@ -35,9 +35,9 @@
 						?>
 					<?php if ( is_front_page() && is_home() ) : ?>
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo file_get_contents($logofile); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php get_template_part('images/inline', 'STX_wordmark.svg'); ?></a>
 					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php get_template_part('images/inline', 'STX_wordmark.svg'); ?></a></p>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo file_get_contents($logofile); ?></a>
 					<?php endif;
 
@@ -52,11 +52,11 @@
 					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
 
 					<div id="site-header-menu" class="site-header-menu">
-					
+
 						<div id="header-social-container">
 							<span class="social-icon twitter-icon"><a href="https://twitter.com/stcollective"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/twitter.png" /></a></span><span class="social-icon facebook-icon"><a href="https://www.facebook.com/socialtext.journal.7"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook.png" /></a></span>
 						</div>
-					
+
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
 							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
 								<?php
@@ -107,7 +107,7 @@
 		</header><!-- .site-header -->
 	</div><!-- .site-inner HEADER -->
 	</div><!-- #header-container -->
-	
+
 <?php if ( !is_front_page() ) {  ?>
 
 	<div class="site-inner">
