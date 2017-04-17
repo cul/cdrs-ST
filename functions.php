@@ -176,7 +176,7 @@ function socialtext_color_fields( $fields ) {
     */
     $fields[] = array(
       'type'        => 'color',
-      'setting'     => 'stx_header_color',
+      'settings'     => 'stx_header_color',
       'label'       => __( 'Header Background Color', 'twentysixteen-child' ),
       'description' => __( 'Background color for the site header', 'twentysixteen-child' ),
       'section'     => 'stx_colors',
@@ -194,7 +194,7 @@ function socialtext_color_fields( $fields ) {
     */
     $fields[] = array(
       'type'        => 'color',
-      'setting'     => 'stx_logo_color',
+      'settings'     => 'stx_logo_color',
       'label'       => __( 'Logo Color', 'twentysixteen-child' ),
       'description' => __( 'Color for the site logo and main menu text', 'twentysixteen-child' ),
       'section'     => 'stx_colors',
@@ -220,7 +220,7 @@ function socialtext_color_fields( $fields ) {
     */
     $fields[] = array(
       'type'        => 'color',
-      'setting'     => 'stx_menu_hover',
+      'settings'     => 'stx_menu_hover',
       'label'       => __( 'Menu Hover Color', 'twentysixteen-child' ),
       'description' => __( 'Color for main menu text on hover', 'twentysixteen-child' ),
       'section'     => 'stx_colors',
