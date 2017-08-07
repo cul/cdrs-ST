@@ -143,7 +143,7 @@ get_header(); ?>
 			<div class="home-per-details-inner">
 			<a href="<?php echo $per_link; ?>" class="feed_item_title"><?php echo $per_title; ?></a>
 			<div class="feed_item_excerpt"><p><?php echo $per_trimmed; ?></p></div>
-			<ul class="per_home_links"><li><a href="<?php echo $per_link; ?>">Browse this Periscope (<?php echo $per_count; ?> Articles)</a></li><li><a href="#">Periscope Archives</a></li></ul>
+			<ul class="per_home_links"><li><a href="<?php echo $per_link; ?>">Browse this Periscope (<?php echo $per_count; ?> Articles)</a></li><li><a href="<?php echo site_url(); ?>/periscope/">Periscope Archives</a></li></ul>
 			</div>
 			</div>
 		</div>
